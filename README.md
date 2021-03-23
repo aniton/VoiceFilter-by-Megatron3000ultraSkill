@@ -52,8 +52,6 @@ Metrics comparing to **paper results**, where [LibriSpeech dataset](https://www.
 | Before VoiceFilter | 2.5  | 1.6 |
 | After VoiceFilter  | 12.6 | 4.8 |
 
-### Downstream tasks
-Go to folder downstream_tasks and follow the README file there.
 
 ### :left_right_arrow: Reverse Task
 For the task of keeping background noise and voices, but removing the target speaker voice we used the same system (Speech Embedder + Voicefilter).
@@ -63,8 +61,11 @@ The main difference was in **inputs**:
 
 For this purpose, we made use of [VOICES](https://iqtlabs.github.io/voices/Lab41-SRI-VOiCES_README/) dataset, which contains audio samples of clean speech from [Librispeech dataset](https://www.openslr.org/12) played with different background noise.
 
-We generated spectrograms for target and mixed audio samples by:
+We generated train/test target and mixed audio samples by:
+<pre>python rev_data_gen.py -p [path to VOiCES_devkit data] -s [path to save dir] -n [number generated samples by user]</pre>
 
+We generated spectrograms for target and mixed audio samples by:
+<pre>python rev_spec_gen.py -p [path to folder with train/test data] -s [path to save dir] -с [path to config.yaml file]</pre>
 
 Then we trained the model in the same maner as in the first task.
 #### Results
@@ -76,6 +77,9 @@ After 2k steps:
 
 **See an example** :small_red_triangle_down: <br> https://aniton.github.io/videos1.github.io/ <br>
 Cut vesion of resulted samples: :small_red_triangle_down: <br> https://drive.google.com/file/d/14xXaB1WuUq9yqIT88L1ldKyh1SIf1tK9/view?usp=sharing
+
+### Downstream tasks
+Go to folder downstream_tasks and follow the README file there.
 
 
 ### Acknowledgements
