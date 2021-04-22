@@ -9,7 +9,6 @@ This is Skoltech ML Final Project, devoted to
 + Reverse the model so it keeps all but one :heavy_check_mark:
 
 ### :rocket: Launch the model
-We used **p2s.16xlarge.8** for the following scenario.
 #### Requirements
 We tested the code on Python 3.6 with PyTorch 1.0.1. Other packages can be installed by:
   <pre> pip install -r requirements.txt</pre>
